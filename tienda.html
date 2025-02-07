@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MundoMagico3D - Tienda</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1e6ff;
+        }
+        
+        .header {
+            background-color: #5c3f8c;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .branding span {
+            display: block;
+            font-weight: bold;
+        }
+        
+                nav {
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .cart-icon {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-icon img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .category {
+            background-color: #5c3f8c;
+            color: white;
+            padding: 15px;
+            font-size: 22px;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+        .product {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: 220px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .product button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .product button:hover {
+            background-color: #ffa500;
+        }
+        .footer-bottom {
+            background-color: #4b266e;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+        <!-- Menú de navegación -->
+    <div class="header">
+        <div class="branding">
+            <span>Mundo</span>
+            <span>Mágico</span>
+            <span>3D</span>
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="tienda.html">Tienda</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="micuenta.html">Mi cuenta</a>
+        </nav>
+        <div class="cart-icon">
+            <a href="carrito.html" title="Cesta de la compra">
+                <img src="https://cdn-icons-png.flaticon.com/512/126/126083.png" alt="Carrito">
+            </a>
+        </div>
+    </div>
+
+
+    <div class="category">Barajas de Póker</div>
+    <div class="product-container">
+        <div class="product">
+            <img src="baraja-bycicle.png" alt="Baraja Póker 1">
+            <h3>Baraja Póker Bycicle</h3>
+            <p>Precio: 15€</p>
+            <button onclick="addToCart('Baraja Póker Bycicle', 15, 'baraja-poker1.jpg')">Añadir al carrito</button>
+        </div>
+        <div class="product">
+            <img src="baraja-noc.png" alt="Baraja Póker 2">
+            <h3>Baraja Póker Noc</h3>
+            <p>Precio: 17€</p>
+            <button onclick="addToCart('Baraja Póker Noc', 17, 'baraja-poker2.jpg')">Añadir al carrito</button>
+        </div>
+         <div class="product">
+            <img src="poker-colores.png" alt="Baraja Póker 3">
+             <img src="poker-colores2.png">
+            <h3>Baraja Póker Colores</h3>
+            <p>Precio: 20€</p>
+            <button onclick="addToCart('Baraja Póker Colores', 20, 'baraja-poker3.jpg')">Añadir al carrito</button>
+        </div>
+         <div class="product">
+            <img src="baraja-aviator.png" alt="Baraja Póker 4">
+            <h3>Baraja Póker Aviator</h3>
+            <p>Precio: 14€</p>
+            <button onclick="addToCart('Baraja Póker Aviator', 14, 'baraja-poker4.jpg')">Añadir al carrito</button>
+        </div>
+    </div>
+
+    <div class="category">Barajas Trucadas</div>
+    <div class="product-container">
+        <div class="product">
+            <img src="svengali-trucada.jpg" alt="Baraja Trucada">
+            <h3>Baraja Svengali</h3>
+            <p>Precio: 15€</p>
+            <button onclick="addToCart('Baraja Trucada', 15, 'baraja-trucada.jpg')">Añadir al carrito</button>
+        </div>
+                <div class="product">
+            <img src="trucada-cartoon.png" alt="Baraja Trucada">
+            <img src="cartoon-2.png" alt="Baraja Trucada">
+            <h3>Baraja Cartoon</h3>
+            <p>Precio: 27€</p>
+            <button onclick="addToCart('Baraja Trucada', 27, 'baraja-trucada.jpg')">Añadir al carrito</button>
+        </div>
+             <div class="product">
+            <img src="dorso-blanco.png" alt="Baraja Trucada">
+            <img src="dorso-blanco2.png" alt="Baraja Trucada">
+            <h3>Baraja Dorso blanco</h3>
+            <p>Precio: 9.99€</p>
+            <button onclick="addToCart('Baraja Trucada', 9.99, 'baraja-trucada.jpg')">Añadir al carrito</button>
+        </div>
+        
+    </div>
+
+    <div class="category">Cuerdas</div>
+    <div class="product-container">
+        <div class="product">
+            <img src="cuerda1.png" alt="Cuerda Mágica">
+            <img src="cuerda1-1.png" alt="Cuerda Mágica">
+           <img src="cuerda1-2.png" alt="Cuerda Mágica">
+            <h3>Cuerda Mágica</h3>
+            <p>Precio: 11.95€</p>
+            <button onclick="addToCart('Cuerda Mágica', 11.95, 'cuerda-magica.jpg')">Añadir al carrito</button>
+        </div>
+            <div class="product">
+            <img src="cuerda-hindu.png" alt="Cuerda Mágica">
+            <h3>Cuerda Hindú</h3>
+            <p>Precio: 11.95€</p>
+            <button onclick="addToCart('Cuerda Mágica', 11.95, 'cuerda-magica.jpg')">Añadir al carrito</button>
+        </div>
+    </div>
+
+    <div class="category">Monedas</div>
+    <div class="product-container">
+        <div class="product">
+            <img src="cobre.png" alt="Moneda Mágica">
+            <h3>Moneda cobre</h3>
+            <p>Precio: 8€</p>
+            <button onclick="addToCart('Moneda Mágica', 8, 'moneda-magica.jpg')">Añadir al carrito</button>
+        </div>
+             <div class="product">
+            <img src="caja-okito.png" alt="Moneda Mágica">
+            <img src="okito2.png" alt="Moneda Mágica">
+            <h3>Caja Okito</h3>
+            <p>Precio: 29.95€</p>
+            <button onclick="addToCart('Moneda Mágica', 29.95, 'moneda-magica.jpg')">Añadir al carrito</button>
+        </div>
+            <div class="product">
+            <img src="transparente.png" alt="Moneda Mágica">
+           <img src="transp2.png" alt="Moneda Mágica">
+            <h3>Moneda cobre</h3>
+            <p>Precio: 17.90€</p>
+            <button onclick="addToCart('Moneda Mágica', 17.90, 'moneda-magica.jpg')">Añadir al carrito</button>
+        </div>
+         <div class="product">
+            <img src="mordida.png" alt="Moneda Mágica">
+            <img src="mordida2.png" alt="Moneda Mágica">
+            <h3>Flipper Dolar</h3>
+            <p>Precio: 19€</p>
+            <button onclick="addToCart('Moneda Mágica', 8, 'moneda-magica.jpg')">Añadir al carrito</button>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 MundoMagico3D. Todos los derechos reservados.</p>
+    </div>
+
+    <script>
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            let productIndex = cart.findIndex(item => item.name === name);
+            if (productIndex !== -1) {
+                cart[productIndex].quantity += 1;
+            } else {
+                cart.push({ name, price, image, quantity: 1 });
+            }
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(`${name} añadido al carrito`);
+        }
+    </script>
+</body>
+</html>

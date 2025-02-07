@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - MundoMagico3D</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 15px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+
+        header nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            list-style: none;
+        }
+
+        header nav ul li {
+            display: inline;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        header nav ul li a:hover {
+            background-color: #ffcc00;
+            color: #000;
+            transform: scale(1.1);
+        }
+
+        .contact-container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            width: 80%;
+            max-width: 800px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-container h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .contact-container p {
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            transform: translateY(-5px);
+        }
+
+        .contact-form button {
+            padding: 12px 30px;
+            font-size: 18px;
+            background-color: #ffcc00;
+            color: #333;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #ffa500;
+            transform: translateY(-5px);
+        }
+
+        .success-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .floating-icon {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            font-size: 50px;
+            animation: floating 2s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="tienda.html">Tienda</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="micuenta.html">Mi cuenta</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="contact-container">
+            <h1>¡Contáctanos!</h1>
+            <p>¿Tienes alguna duda? ¡Estamos aquí para ayudarte! Envíanos tu mensaje y te responderemos lo antes posible.</p>
+
+            <div class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Tu Nombre" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Tu Correo Electrónico" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" placeholder="Escribe tu mensaje..." required></textarea>
+                </div>
+                <button onclick="sendMessage()">Enviar Mensaje</button>
+                <p class="success-message" id="successMessage">¡Tu mensaje ha sido enviado con éxito!</p>
+            </div>
+
+            <!-- Icono flotante de magia en 3D -->
+            <div class="floating-icon">
+                &#x1F9D9; <!-- Ícono de mago -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MundoMagico3D. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function sendMessage() {
+            // Mostrar mensaje de éxito
+            document.getElementById("successMessage").style.display = "block";
+            // Ocultar mensaje después de 5 segundos
+            setTimeout(function() {
+                document.getElementById("successMessage").style.display = "none";
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
